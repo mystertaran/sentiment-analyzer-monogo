@@ -2,11 +2,11 @@
 
 Aplikacja webowa do analizy sentymentu tekstu wykorzystująca HuggingFace API i GraphQL.
 
-## Uruchomienie projektu
-
-1. Instalacja zależności:
+# Uruchomienie projektu
 
 ## Instrukcja instalacji i uruchomienia
+
+1. Instalacja zależności:
 
 ### Frontend
 
