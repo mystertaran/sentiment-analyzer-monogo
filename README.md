@@ -6,7 +6,6 @@ Aplikacja webowa do analizy sentymentu tekstu wykorzystująca HuggingFace API i 
 
 ## Instrukcja instalacji i uruchomienia
 
-1. Instalacja zależności:
 
 ### Frontend
 
