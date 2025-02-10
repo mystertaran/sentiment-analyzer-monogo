@@ -1,0 +1,99 @@
+// Style dla toastów w zależności od motywu
+.Toastify {
+  --toastify-color-light: var(--card-bg);
+  --toastify-color-dark: var(--card-bg);
+  --toastify-color-info: #3b82f6;
+  --toastify-color-success: #10b981;
+  --toastify-color-warning: #f59e0b;
+  --toastify-color-error: #ef4444;
+  --toastify-text-color-light: var(--text-primary);
+  --toastify-text-color-dark: var(--text-primary);
+
+  .Toastify__toast {
+    background-color: var(--card-bg);
+    color: var(--text-primary);
+    box-shadow: var(--card-shadow);
+    border-radius: 8px;
+    font-family: $font-family;
+
+    &--info {
+      background-color: var(--toastify-color-info);
+      color: white;
+    }
+
+    &--success {
+      background-color: var(--toastify-color-success);
+      color: white;
+    }
+
+    &--warning {
+      background-color: var(--toastify-color-warning);
+      color: white;
+    }
+
+    &--error {
+      background-color: var(--toastify-color-error);
+      color: white;
+    }
+
+    &-body {
+      font-size: 0.95rem;
+      padding: 4px 0;
+    }
+  }
+
+  .Toastify__close-button {
+    color: currentColor;
+    opacity: 0.7;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .Toastify__progress-bar {
+    &--info {
+      background-color: rgba(255, 255, 255, 0.7);
+    }
+    &--success {
+      background-color: rgba(255, 255, 255, 0.7);
+    }
+    &--warning {
+      background-color: rgba(255, 255, 255, 0.7);
+    }
+    &--error {
+      background-color: rgba(255, 255, 255, 0.7);
+    }
+  }
+}
+
+// Animacje dla toastów
+@keyframes toast-slide-in {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes toast-slide-out {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.Toastify__toast {
+  animation: toast-slide-in 0.3s ease forwards;
+
+  &.Toastify__toast--exit {
+    animation: toast-slide-out 0.3s ease forwards;
+  }
+} 

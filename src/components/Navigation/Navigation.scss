@@ -1,0 +1,120 @@
+@import '../../styles/variables';
+
+.navigation-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 1rem;
+  
+  @media (max-width: $breakpoint-mobile) {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 0.75rem;
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      var(--bg-primary) 20%
+    );
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $spacing-medium $spacing-large;
+  background-color: var(--nav-bg);
+  box-shadow: var(--nav-shadow);
+  border-radius: 1rem;
+  width: 100%;
+  max-width: 600px;
+
+  @media (max-width: $breakpoint-mobile) {
+    background-color: color-mix(in srgb, var(--nav-bg) 80%, transparent);
+    padding: $spacing-small $spacing-medium;
+    border-radius: 1.5rem;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  &__items {
+    display: flex;
+    gap: $spacing-medium;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: $spacing-small;
+    padding: $spacing-small $spacing-medium;
+    border: none;
+    background: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    border-radius: 0.75rem;
+    transition: all 0.2s ease;
+    font-weight: 500;
+
+    &:hover {
+      background-color: var(--nav-item-hover);
+    }
+
+    &.active {
+      background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%);
+      color: white;
+      
+      svg {
+        color: white;
+      }
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+      color: var(--text-primary);
+      transition: color 0.2s ease;
+    }
+
+    span {
+      font-size: 0.95rem;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: $spacing-medium;
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  body {
+    padding-bottom: calc(80px + env(safe-area-inset-bottom));
+  }
+
+  .navigation {
+    padding: $spacing-small $spacing-medium;
+    padding-bottom: calc($spacing-small + env(safe-area-inset-bottom));
+
+    &__items {
+      gap: $spacing-small;
+    }
+
+    &__item {
+      padding: $spacing-small;
+      
+      span {
+        display: none;
+      }
+
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+} 

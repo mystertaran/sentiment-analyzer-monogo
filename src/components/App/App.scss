@@ -1,0 +1,28 @@
+@import '../../styles/variables';
+@import '../../styles/themes';
+
+.app {
+    text-align: center;
+    padding: $spacing-medium;
+    min-height: 100vh;
+    background-color: var(--bg-primary);
+    
+    h1 {
+      color: #333;
+      font-size: 2rem;
+      
+      &:hover {
+        color: lighten(#333, 20%);
+      }
+    }
+
+    &__content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: $spacing-large;
+      
+      @media (max-width: $breakpoint-mobile) {
+        padding: $spacing-medium;
+      }
+    }
+  }

@@ -1,0 +1,55 @@
+@import '../../styles/variables';
+
+.text-input-container {
+  position: relative;
+  width: 100%;
+
+  .text-input {
+    width: 100%;
+    padding: $spacing-medium;
+    border: 2px solid var(--input-border);
+    border-radius: 8px;
+    background-color: var(--input-bg);
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: 1rem;
+    resize: vertical;
+    min-height: 120px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+    &:focus {
+      outline: none;
+      border-color: var(--text-active);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+
+    &:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+
+    &::placeholder {
+      color: var(--text-secondary);
+    }
+  }
+
+  .character-count {
+    position: absolute;
+    bottom: -1.25rem;
+    right: 0;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+  }
+
+  &.has-error {
+    .text-input {
+      border-color: var(--error-color);
+    }
+
+    .error-message {
+      color: var(--error-color);
+      font-size: 0.875rem;
+      margin-top: $spacing-small;
+    }
+  }
+} 

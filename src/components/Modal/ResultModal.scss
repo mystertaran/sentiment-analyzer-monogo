@@ -1,0 +1,167 @@
+@import '../../styles/variables';
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+  animation: fadeIn 0.2s ease-out;
+}
+
+.modal-content {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  padding: $spacing-large;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  animation: slideIn 0.3s ease-out;
+
+  .modal-header {
+    text-align: center;
+    margin-bottom: $spacing-large;
+
+    .sentiment-icon {
+      margin-bottom: $spacing-medium;
+      font-size: 2.5rem;
+    }
+
+    h2 {
+      margin: 0;
+      color: var(--text-primary);
+      font-size: 1.75rem;
+      font-weight: 700;
+      background: $primary-gradient;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .sentiment-score {
+      margin-top: $spacing-small;
+      color: var(--text-secondary);
+      font-size: 1rem;
+      font-weight: 500;
+    }
+  }
+
+  .modal-body {
+    .description {
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: $spacing-large;
+      font-size: 1.1rem;
+    }
+
+    .tip {
+      background-color: var(--bg-secondary);
+      padding: $spacing-medium $spacing-large;
+      border-radius: 0.75rem;
+      border: 1px solid var(--border-color);
+
+      h3 {
+        margin: 0 0 $spacing-small;
+        color: var(--text-primary);
+        font-size: 1.1rem;
+        font-weight: 600;
+      }
+
+      p {
+        margin: 0;
+        color: var(--text-secondary);
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+    }
+  }
+
+  .modal-footer {
+    margin-top: $spacing-large;
+    text-align: right;
+
+    .modal-close {
+      background: $primary-gradient;
+      color: white;
+      padding: $spacing-medium $spacing-large;
+      border: none;
+      border-radius: 0.75rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+
+      &:hover {
+        background: linear-gradient(135deg, 
+          darken(#3b82f6, 5%) 0%, 
+          darken(#8b5cf6, 5%) 50%, 
+          darken(#ec4899, 5%) 100%
+        );
+      }
+    }
+  }
+}
+
+.modal-loading {
+  text-align: center;
+  padding: $spacing-large;
+
+  .loader {
+    margin-bottom: $spacing-medium;
+  }
+
+  p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+  }
+}
+
+.modal-error {
+  text-align: center;
+  padding: $spacing-large;
+
+  h2 {
+    color: var(--error-color);
+    margin-bottom: $spacing-medium;
+    font-size: 1.5rem;
+  }
+
+  .error-message {
+    color: var(--text-secondary);
+    margin-bottom: $spacing-large;
+    font-size: 1.1rem;
+  }
+
+  button {
+    background: $primary-gradient;
+    &:hover {
+      background: linear-gradient(135deg, 
+        darken(#3b82f6, 5%) 0%, 
+        darken(#8b5cf6, 5%) 50%, 
+        darken(#ec4899, 5%) 100%
+      );
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+} 

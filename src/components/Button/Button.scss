@@ -1,0 +1,155 @@
+@import '../../styles/variables';
+
+.button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-small;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+
+  &--small {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    
+    .button__icon {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  &--medium {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    
+    .button__icon {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &--large {
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+    
+    .button__icon {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &--primary {
+    background: $primary-gradient;
+    color: white;
+
+    &:hover:not(:disabled) {
+      background: linear-gradient(135deg, 
+        darken(#3b82f6, 5%) 0%, 
+        darken(#8b5cf6, 5%) 50%, 
+        darken(#ec4899, 5%) 100%
+      );
+    }
+  }
+
+  &--secondary {
+    background-color: $secondary-color;
+    color: white;
+
+    &:hover:not(:disabled) {
+      background-color: darken($secondary-color, 10%);
+    }
+  }
+
+  &--success {
+    background-color: $success-color;
+    color: white;
+
+    &:hover:not(:disabled) {
+      background-color: darken($success-color, 10%);
+    }
+  }
+
+  &--error {
+    background-color: $error-color;
+    color: white;
+
+    &:hover:not(:disabled) {
+      background-color: darken($error-color, 10%);
+    }
+  }
+
+  &--warning {
+    background-color: $warning-color;
+    color: white;
+
+    &:hover:not(:disabled) {
+      background-color: darken($warning-color, 10%);
+    }
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    background: var(--text-secondary);
+  }
+
+  &--loading {
+    cursor: wait;
+    
+    .button__content {
+      opacity: 0;
+    }
+    
+    .button__loader {
+      position: absolute;
+      @include flex-center;
+      
+      .loader {
+        width: 20px;
+        height: 20px;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        border-top-color: white;
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+      }
+    }
+  }
+
+  &--full-width {
+    width: 100%;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba($primary-color, 0.3);
+  }
+
+  &:active:not(:disabled) {
+    transform: translateY(1px);
+  }
+
+  .button__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &--left {
+      margin-right: $spacing-small;
+    }
+
+    &--right {
+      margin-left: $spacing-small;
+    }
+  }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+} 

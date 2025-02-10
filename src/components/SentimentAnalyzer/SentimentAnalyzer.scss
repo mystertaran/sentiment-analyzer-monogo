@@ -1,0 +1,150 @@
+@import '../../styles/variables';
+
+.sentiment-analyzer {
+  width: 100%;
+  
+  &__hero {
+    text-align: center;
+    padding: 6rem 2rem;
+    background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    border-radius: 0;
+    clip-path: ellipse(100% 100% at 50% 0%);
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+    }
+
+    .gradient-title {
+      font-size: 4rem;
+      font-weight: 900;
+      margin-bottom: 1.5rem;
+      background: $primary-gradient;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      transition: none;
+    }
+  }
+
+  &__content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+  }
+
+  &__description {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .sentiment-form {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 3rem;
+    background: var(--bg-secondary);
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+
+    &__buttons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+      justify-content: flex-end;
+
+      button {
+        min-width: 120px;
+      }
+    }
+  }
+
+  .button-group {
+    display: flex;
+    gap: $spacing-medium;
+    margin-top: $spacing-medium;
+
+    @media (max-width: $breakpoint-mobile) {
+      flex-direction: column;
+      width: 100%;
+
+      .button {
+        width: 100%;
+      }
+    }
+
+    @media (min-width: $breakpoint-mobile) {
+      justify-content: flex-start;
+
+      .button {
+        min-width: 150px;
+      }
+    }
+  }
+
+  .submit-button {
+    padding: $spacing-medium;
+    background-color: $primary-color;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    &:hover:not(:disabled) {
+      background-color: darken($primary-color, 10%);
+    }
+
+    &:disabled {
+      background-color: $secondary-color;
+      cursor: not-allowed;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .sentiment-analyzer {
+    &__hero {
+      padding: 4rem 1.5rem;
+      
+      h1 {
+        font-size: 2rem;
+      }
+
+      .gradient-title {
+        font-size: 3rem;
+      }
+    }
+
+    &__content {
+      padding: 2rem 1.5rem;
+    }
+
+    &__description {
+      font-size: 1.1rem;
+    }
+
+    .sentiment-form {
+      padding: 1.5rem;
+
+      &__buttons {
+        flex-direction: column;
+        
+        button {
+          width: 100%;
+        }
+      }
+    }
+  }
+} 
