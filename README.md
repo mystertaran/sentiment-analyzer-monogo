@@ -75,6 +75,7 @@ npm run server:lint:fix # Naprawa ESLint
 Projekt wykorzystuje następujące narzędzia do statycznej analizy kodu:
 
 - ESLint v5.62.0 (@typescript-eslint/eslint-plugin) - linter JavaScript/TypeScript
+- eslint-plugin-react-hooks - reguły dla React Hooks
 - Prettier v2.8.8 - formatowanie kodu
 - Husky v8.0.3 - git hooks
 - lint-staged v15.2.0 - uruchamianie lintera tylko na zmienionych plikach
