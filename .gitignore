@@ -16,6 +16,11 @@
 /build
 /server/dist
 
+# Cache files
+.eslintcache
+server/.eslintcache
+.cache
+
 # misc
 .DS_Store
 .env
