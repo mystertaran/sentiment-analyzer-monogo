@@ -57,6 +57,7 @@ Komendy uruchamiane w katalogu głównym projektu.
 ```bash
 npm run dev       # Development
 npm run build     # Produkcja
+npm test          # Uruchomienie testów
 npm run lint      # ESLint
 npm run lint:fix  # Naprawa ESLint
 ```
